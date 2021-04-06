@@ -72,7 +72,7 @@ Namespace WindowsApplication53
 
         Protected Overrides Function DrawHeaderBrick(ByVal field As PivotFieldItemBase, ByVal bounds As Rectangle) As IVisualBrick
             Dim appearance As IPivotPrintAppearance = GetFieldAppearance(field)
-            SetDefaultBrickStyle(appearance, New Padding(CellSizeProvider.FieldValueTextOffset, 0, 0, 0))
+            SetDefaultBrickStyle(appearance, CellSizeProvider.FieldValueTextOffset, 0, 0, 0)
 
             Dim text As String = field.Caption
             Dim brick As IVisualBrick = CreateTextBrick()
@@ -147,11 +147,11 @@ Namespace WindowsApplication53
             brickStyle.StringFormat.PrototypeKind = BrickStringFormatPrototypeKind.GenericTypographic
             brick.Style = brickStyle
         End Sub
-        Private Sub SetDefaultBrickStyle(ByVal appearance As IPivotPrintAppearance, ByVal padding As Padding)
+        Private Sub SetDefaultBrickStyle(ByVal appearance As IPivotPrintAppearance, ByVal left As Integer, ByVal top As Integer, ByVal right As Integer, ByVal bottom As Integer)
             If appearance Is Nothing Then
                 Return
             End If
-            Graph.DefaultBrickStyle = CreateBrickStyle(appearance, padding)
+            Graph.DefaultBrickStyle = CreateBrickStyle(appearance, left, top, right, bottom)
         End Sub
         Protected Overrides Function CreatePivotPrintBestFitter() As PivotPrintBestFitter
             Return New MyPivotPrintBestFitter(Data, Me)

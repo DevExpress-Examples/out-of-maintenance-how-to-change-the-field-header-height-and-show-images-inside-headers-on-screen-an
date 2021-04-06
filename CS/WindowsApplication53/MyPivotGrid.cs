@@ -57,7 +57,7 @@ namespace WindowsApplication53
         protected override IVisualBrick DrawHeaderBrick(PivotFieldItemBase field, Rectangle bounds)
         {
             IPivotPrintAppearance appearance = GetFieldAppearance(field);
-            SetDefaultBrickStyle(appearance, new Padding(CellSizeProvider.FieldValueTextOffset, 0, 0, 0));
+            SetDefaultBrickStyle(appearance, CellSizeProvider.FieldValueTextOffset, 0, 0, 0);
 
             string text = field.Caption;
             IVisualBrick brick = CreateTextBrick();
@@ -131,11 +131,11 @@ namespace WindowsApplication53
             brickStyle.StringFormat.PrototypeKind = BrickStringFormatPrototypeKind.GenericTypographic;
             brick.Style = brickStyle;
         }
-        void SetDefaultBrickStyle(IPivotPrintAppearance appearance, Padding padding)
+        void SetDefaultBrickStyle(IPivotPrintAppearance appearance, int left, int top, int right, int bottom)
         {
             if (appearance == null)
                 return;
-            Graph.DefaultBrickStyle = CreateBrickStyle(appearance, padding);
+            Graph.DefaultBrickStyle = CreateBrickStyle(appearance, left, top, right, bottom);
         }
         protected override PivotPrintBestFitter CreatePivotPrintBestFitter()
         {
