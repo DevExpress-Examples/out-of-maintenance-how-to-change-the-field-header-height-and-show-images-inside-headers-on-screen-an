@@ -1,5 +1,7 @@
-﻿Namespace WindowsApplication53
-    Partial Public Class Form1
+Namespace WindowsApplication53
+
+    Partial Class Form1
+
         ''' <summary>
         ''' Required designer variable.
         ''' </summary>
@@ -10,21 +12,21 @@
         ''' </summary>
         ''' <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-            If disposing AndAlso (components IsNot Nothing) Then
-                components.Dispose()
+            If disposing AndAlso (Me.components IsNot Nothing) Then
+                Me.components.Dispose()
             End If
+
             MyBase.Dispose(disposing)
         End Sub
 
-        #Region "Windows Form Designer generated code"
-
+'#Region "Windows Form Designer generated code"
         ''' <summary>
         ''' Required method for Designer support - do not modify
         ''' the contents of this method with the code editor.
         ''' </summary>
         Private Sub InitializeComponent()
             Me.components = New System.ComponentModel.Container()
-            Dim resources As New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+            Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(WindowsApplication53.Form1))
             Me.dataSet1 = New System.Data.DataSet()
             Me.dataTable1 = New System.Data.DataTable()
             Me.dataColumn1 = New System.Data.DataColumn()
@@ -40,19 +42,19 @@
             Me.fieldValue1 = New DevExpress.XtraPivotGrid.PivotGridField()
             Me.fieldValue2 = New DevExpress.XtraPivotGrid.PivotGridField()
             Me.fieldDate1 = New DevExpress.XtraPivotGrid.PivotGridField()
-            DirectCast(Me.dataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.dataTable1, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.pivotGridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.dataSet1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.dataTable1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.pivotGridControl1), System.ComponentModel.ISupportInitialize).BeginInit()
             Me.SuspendLayout()
             ' 
             ' dataSet1
             ' 
             Me.dataSet1.DataSetName = "NewDataSet"
-            Me.dataSet1.Tables.AddRange(New System.Data.DataTable() { Me.dataTable1})
+            Me.dataSet1.Tables.AddRange(New System.Data.DataTable() {Me.dataTable1})
             ' 
             ' dataTable1
             ' 
-            Me.dataTable1.Columns.AddRange(New System.Data.DataColumn() { Me.dataColumn1, Me.dataColumn2, Me.dataColumn3})
+            Me.dataTable1.Columns.AddRange(New System.Data.DataColumn() {Me.dataColumn1, Me.dataColumn2, Me.dataColumn3})
             Me.dataTable1.TableName = "Data"
             ' 
             ' dataColumn1
@@ -62,7 +64,7 @@
             ' dataColumn2
             ' 
             Me.dataColumn2.ColumnName = "Date"
-            Me.dataColumn2.DataType = GetType(Date)
+            Me.dataColumn2.DataType = GetType(System.DateTime)
             ' 
             ' dataColumn3
             ' 
@@ -84,10 +86,17 @@
             Me.simpleButton1.Size = New System.Drawing.Size(99, 38)
             Me.simpleButton1.TabIndex = 2
             Me.simpleButton1.Text = "Preview"
-            ' 
+             ''' Cannot convert AssignmentExpressionSyntax, System.NullReferenceException: Object reference not set to an instance of an object.
+'''    at ICSharpCode.CodeConverter.VB.NodesVisitor.VisitAssignmentExpression(AssignmentExpressionSyntax node)
+'''    at Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor`1.Visit(SyntaxNode node)
+'''    at ICSharpCode.CodeConverter.VB.CommentConvertingVisitorWrapper`1.Accept(SyntaxNode csNode, Boolean addSourceMapping)
+''' 
+''' Input:
+'''             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click)
+'''  ' 
             ' imageList1
             ' 
-            Me.imageList1.ImageStream = (DirectCast(resources.GetObject("imageList1.ImageStream"), System.Windows.Forms.ImageListStreamer))
+Me.imageList1.ImageStream = CType((resources.GetObject("imageList1.ImageStream")), System.Windows.Forms.ImageListStreamer)
             Me.imageList1.TransparentColor = System.Drawing.Color.White
             Me.imageList1.Images.SetKeyName(0, "smile.jpg")
             ' 
@@ -95,21 +104,28 @@
             ' 
             Me.pivotGridControl1.Appearance.FieldHeader.Options.UseTextOptions = True
             Me.pivotGridControl1.Appearance.FieldHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
-            Me.pivotGridControl1.Cursor = System.Windows.Forms.Cursors.Default
+            Me.pivotGridControl1.Cursor = System.Windows.Forms.Cursors.[Default]
             Me.pivotGridControl1.DataMember = "Data"
             Me.pivotGridControl1.DataSource = Me.dataSet1
             Me.pivotGridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-            Me.pivotGridControl1.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() { Me.fieldName, Me.fieldDate, Me.fieldValue, Me.fieldValue1, Me.fieldValue2, Me.fieldDate1})
+            Me.pivotGridControl1.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() {Me.fieldName, Me.fieldDate, Me.fieldValue, Me.fieldValue1, Me.fieldValue2, Me.fieldDate1})
             Me.pivotGridControl1.HeaderImages = Me.imageList1
             Me.pivotGridControl1.Location = New System.Drawing.Point(0, 0)
             Me.pivotGridControl1.Name = "pivotGridControl1"
             Me.pivotGridControl1.OptionsDataField.ColumnValueLineCount = 2
             Me.pivotGridControl1.Size = New System.Drawing.Size(596, 292)
             Me.pivotGridControl1.TabIndex = 0
-            ' 
+             ''' Cannot convert AssignmentExpressionSyntax, System.NullReferenceException: Object reference not set to an instance of an object.
+'''    at ICSharpCode.CodeConverter.VB.NodesVisitor.VisitAssignmentExpression(AssignmentExpressionSyntax node)
+'''    at Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor`1.Visit(SyntaxNode node)
+'''    at ICSharpCode.CodeConverter.VB.CommentConvertingVisitorWrapper`1.Accept(SyntaxNode csNode, Boolean addSourceMapping)
+''' 
+''' Input:
+'''             this.pivotGridControl1.CustomExportHeader += new System.EventHandler<DevExpress.XtraPivotGrid.CustomExportHeaderEventArgs>(this.pivotGridControl1_CustomExportHeader)
+'''  ' 
             ' fieldName
             ' 
-            Me.fieldName.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
+Me.fieldName.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
             Me.fieldName.AreaIndex = 0
             Me.fieldName.Caption = "Name"
             Me.fieldName.FieldName = "Name"
@@ -167,7 +183,7 @@
             Me.fieldDate1.AreaIndex = 0
             Me.fieldDate1.Caption = "Date"
             Me.fieldDate1.FieldName = "Date"
-            Me.fieldDate1.GroupInterval = DevExpress.XtraPivotGrid.PivotGroupInterval.Date
+            Me.fieldDate1.GroupInterval = DevExpress.XtraPivotGrid.PivotGroupInterval.[Date]
             Me.fieldDate1.ImageIndex = 0
             Me.fieldDate1.Name = "fieldDate1"
             Me.fieldDate1.UnboundFieldName = "fieldDate1"
@@ -182,30 +198,42 @@
             Me.Controls.Add(Me.panel1)
             Me.Name = "Form1"
             Me.Text = "Form1"
-            DirectCast(Me.dataSet1, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.dataTable1, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.pivotGridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+            AddHandler Me.Load, New System.EventHandler(AddressOf Me.Form1_Load)
+            CType((Me.dataSet1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.dataTable1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.pivotGridControl1), System.ComponentModel.ISupportInitialize).EndInit()
             Me.ResumeLayout(False)
-
         End Sub
 
-        #End Region
+'#End Region
+        Private pivotGridControl1 As WindowsApplication53.MyPivotGridControl
 
-        Private WithEvents pivotGridControl1 As MyPivotGridControl
         Private dataSet1 As System.Data.DataSet
+
         Private dataTable1 As System.Data.DataTable
+
         Private dataColumn1 As System.Data.DataColumn
+
         Private dataColumn2 As System.Data.DataColumn
+
         Private dataColumn3 As System.Data.DataColumn
+
         Private fieldName As DevExpress.XtraPivotGrid.PivotGridField
+
         Private fieldDate As DevExpress.XtraPivotGrid.PivotGridField
+
         Private fieldValue As DevExpress.XtraPivotGrid.PivotGridField
+
         Private fieldValue1 As DevExpress.XtraPivotGrid.PivotGridField
+
         Private fieldValue2 As DevExpress.XtraPivotGrid.PivotGridField
+
         Private fieldDate1 As DevExpress.XtraPivotGrid.PivotGridField
+
         Private panel1 As System.Windows.Forms.Panel
-        Private WithEvents simpleButton1 As DevExpress.XtraEditors.SimpleButton
+
+        Private simpleButton1 As DevExpress.XtraEditors.SimpleButton
+
         Private imageList1 As System.Windows.Forms.ImageList
     End Class
 End Namespace
-
