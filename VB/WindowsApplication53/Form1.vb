@@ -3,7 +3,6 @@ Imports System.ComponentModel
 Imports System.Data
 Imports System.Drawing
 Imports System.Windows.Forms
-Imports DevExpress.XtraPrinting
 Imports DevExpress.XtraPivotGrid
 
 Namespace WindowsApplication53
@@ -15,7 +14,7 @@ Namespace WindowsApplication53
             InitializeComponent()
         End Sub
 
-        Private Sub Form1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
+        Private Sub Form1_Load(ByVal sender As Object, ByVal e As EventArgs)
             PopulateTable()
             pivotGridControl1.RefreshData()
             pivotGridControl1.BestFit()
@@ -38,7 +37,7 @@ Namespace WindowsApplication53
             myTable.Rows.Add(New Object() {"Ccc", Date.Today.AddDays(1).AddYears(1), 22})
         End Sub
 
-        Private Sub simpleButton1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles simpleButton1.Click
+        Private Sub simpleButton1_Click(ByVal sender As Object, ByVal e As EventArgs)
             For Each field As PivotGridField In pivotGridControl1.Fields
                 field.Caption = MyPivotGridControl.ImagePlaceHolder & field.Caption
             Next
@@ -49,7 +48,7 @@ Namespace WindowsApplication53
             Next
         End Sub
 
-        Private Sub pivotGridControl1_CustomExportHeader(ByVal sender As Object, ByVal e As DevExpress.XtraPivotGrid.CustomExportHeaderEventArgs) Handles pivotGridControl1.CustomExportHeader
+        Private Sub pivotGridControl1_CustomExportHeader(ByVal sender As Object, ByVal e As CustomExportHeaderEventArgs)
         End Sub
     End Class
 End Namespace

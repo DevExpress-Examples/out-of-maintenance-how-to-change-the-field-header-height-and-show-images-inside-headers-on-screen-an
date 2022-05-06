@@ -6,7 +6,6 @@ Imports DevExpress.XtraPivotGrid.Printing
 Imports DevExpress.XtraPrinting
 Imports System.Drawing
 Imports System.Windows.Forms
-Imports DevExpress.Utils
 Imports DevExpress.PivotGrid.Printing
 Imports DevExpress.XtraPrinting.Native
 
@@ -79,10 +78,10 @@ Namespace WindowsApplication53
             brick.Text = text.Substring(MyPivotGridControl.ImagePlaceHolder.Length)
             If Not Equals(text, Nothing) Then brick.TextValue = text
             brick.TextValueFormatString = ""
-            Dim imageIndex As Integer = CType(Me.Data.GetField(field), PivotGridField).ImageIndex
+            Dim imageIndex As Integer = CType(Data.GetField(field), PivotGridField).ImageIndex
             If imageIndex > -1 Then
                 Dim ib As ImageBrick = New ImageBrick(BorderSide.None, 0, Color.Red, Color.Transparent)
-                ib.Image = CType(Me.PivotGridControl.HeaderImages, ImageList).Images(imageIndex)
+                ib.Image = CType(PivotGridControl.HeaderImages, ImageList).Images(imageIndex)
                 Dim imageWidth As Integer = ib.Image.Width
                 Dim imageHeight As Integer = ib.Image.Height
                 ib.BackColor = brick.BackColor
@@ -101,21 +100,21 @@ Namespace WindowsApplication53
 
             brick.Separable = False
             If Owner IsNot Nothing Then
-                If Owner.CustomExportHeader(brick, field, appearance, bounds) Then Me.ApplyAppearanceToBrickStyle(brick, appearance)
+                If Owner.CustomExportHeader(brick, field, appearance, bounds) Then ApplyAppearanceToBrickStyle(brick, appearance)
             End If
 
             Return brick
         End Function
 
-        Private Sub ApplyAppearanceToBrickStyle(ByVal brick As IVisualBrick, ByVal appearance As IPivotPrintAppearance)
+        Private Overloads Sub ApplyAppearanceToBrickStyle(ByVal brick As IVisualBrick, ByVal appearance As IPivotPrintAppearance)
             Dim panelBrick As IPanelBrick = TryCast(brick, IPanelBrick)
             If panelBrick IsNot Nothing Then
                 For Each item As IVisualBrick In panelBrick.Bricks
-                    Me.ApplyAppearanceToBrickStyleCore(item, appearance)
+                    ApplyAppearanceToBrickStyleCore(item, appearance)
                 Next
             End If
 
-            Me.ApplyAppearanceToBrickStyleCore(brick, appearance)
+            ApplyAppearanceToBrickStyleCore(brick, appearance)
         End Sub
 
         Private Sub ApplyAppearanceToBrickStyleCore(ByVal brick As IVisualBrick, ByVal appearance As IPivotPrintAppearance)
