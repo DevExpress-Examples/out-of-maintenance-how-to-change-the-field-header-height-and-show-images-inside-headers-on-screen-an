@@ -19,7 +19,7 @@ Namespace WindowsApplication53
             MyBase.Dispose(disposing)
         End Sub
 
-#Region "Windows Form Designer generated code"
+'#Region "Windows Form Designer generated code"
         ''' <summary>
         ''' Required method for Designer support - do not modify
         ''' the contents of this method with the code editor.
@@ -27,12 +27,6 @@ Namespace WindowsApplication53
         Private Sub InitializeComponent()
             Me.components = New System.ComponentModel.Container()
             Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(WindowsApplication53.Form1))
-            Dim dataSourceColumnBinding1 As DevExpress.XtraPivotGrid.DataSourceColumnBinding = New DevExpress.XtraPivotGrid.DataSourceColumnBinding()
-            Dim dataSourceColumnBinding2 As DevExpress.XtraPivotGrid.DataSourceColumnBinding = New DevExpress.XtraPivotGrid.DataSourceColumnBinding()
-            Dim dataSourceColumnBinding3 As DevExpress.XtraPivotGrid.DataSourceColumnBinding = New DevExpress.XtraPivotGrid.DataSourceColumnBinding()
-            Dim dataSourceColumnBinding4 As DevExpress.XtraPivotGrid.DataSourceColumnBinding = New DevExpress.XtraPivotGrid.DataSourceColumnBinding()
-            Dim dataSourceColumnBinding5 As DevExpress.XtraPivotGrid.DataSourceColumnBinding = New DevExpress.XtraPivotGrid.DataSourceColumnBinding()
-            Dim dataSourceColumnBinding6 As DevExpress.XtraPivotGrid.DataSourceColumnBinding = New DevExpress.XtraPivotGrid.DataSourceColumnBinding()
             Me.dataSet1 = New System.Data.DataSet()
             Me.dataTable1 = New System.Data.DataTable()
             Me.dataColumn1 = New System.Data.DataColumn()
@@ -42,12 +36,12 @@ Namespace WindowsApplication53
             Me.simpleButton1 = New DevExpress.XtraEditors.SimpleButton()
             Me.imageList1 = New System.Windows.Forms.ImageList(Me.components)
             Me.pivotGridControl1 = New WindowsApplication53.MyPivotGridControl()
-            Me.fieldName1 = New DevExpress.XtraPivotGrid.PivotGridField()
-            Me.fieldDate2 = New DevExpress.XtraPivotGrid.PivotGridField()
-            Me.fieldValue3 = New DevExpress.XtraPivotGrid.PivotGridField()
+            Me.fieldName = New DevExpress.XtraPivotGrid.PivotGridField()
+            Me.fieldDate = New DevExpress.XtraPivotGrid.PivotGridField()
             Me.fieldValue = New DevExpress.XtraPivotGrid.PivotGridField()
             Me.fieldValue1 = New DevExpress.XtraPivotGrid.PivotGridField()
-            Me.fieldDate = New DevExpress.XtraPivotGrid.PivotGridField()
+            Me.fieldValue2 = New DevExpress.XtraPivotGrid.PivotGridField()
+            Me.fieldDate1 = New DevExpress.XtraPivotGrid.PivotGridField()
             CType((Me.dataSet1), System.ComponentModel.ISupportInitialize).BeginInit()
             CType((Me.dataTable1), System.ComponentModel.ISupportInitialize).BeginInit()
             CType((Me.pivotGridControl1), System.ComponentModel.ISupportInitialize).BeginInit()
@@ -92,11 +86,17 @@ Namespace WindowsApplication53
             Me.simpleButton1.Size = New System.Drawing.Size(99, 38)
             Me.simpleButton1.TabIndex = 2
             Me.simpleButton1.Text = "Preview"
-            AddHandler Me.simpleButton1.Click, New System.EventHandler(AddressOf Me.simpleButton1_Click)
-            ' 
+             ''' Cannot convert AssignmentExpressionSyntax, System.NullReferenceException: Object reference not set to an instance of an object.
+'''    at ICSharpCode.CodeConverter.VB.NodesVisitor.VisitAssignmentExpression(AssignmentExpressionSyntax node)
+'''    at Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor`1.Visit(SyntaxNode node)
+'''    at ICSharpCode.CodeConverter.VB.CommentConvertingVisitorWrapper`1.Accept(SyntaxNode csNode, Boolean addSourceMapping)
+''' 
+''' Input:
+'''             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click)
+'''  ' 
             ' imageList1
             ' 
-            Me.imageList1.ImageStream = CType((resources.GetObject("imageList1.ImageStream")), System.Windows.Forms.ImageListStreamer)
+Me.imageList1.ImageStream = CType((resources.GetObject("imageList1.ImageStream")), System.Windows.Forms.ImageListStreamer)
             Me.imageList1.TransparentColor = System.Drawing.Color.White
             Me.imageList1.Images.SetKeyName(0, "smile.jpg")
             ' 
@@ -108,82 +108,85 @@ Namespace WindowsApplication53
             Me.pivotGridControl1.DataMember = "Data"
             Me.pivotGridControl1.DataSource = Me.dataSet1
             Me.pivotGridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-            Me.pivotGridControl1.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() {Me.fieldName1, Me.fieldDate2, Me.fieldValue3, Me.fieldValue, Me.fieldValue1, Me.fieldDate})
+            Me.pivotGridControl1.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() {Me.fieldName, Me.fieldDate, Me.fieldValue, Me.fieldValue1, Me.fieldValue2, Me.fieldDate1})
             Me.pivotGridControl1.HeaderImages = Me.imageList1
             Me.pivotGridControl1.Location = New System.Drawing.Point(0, 0)
             Me.pivotGridControl1.Name = "pivotGridControl1"
-            Me.pivotGridControl1.OptionsData.DataProcessingEngine = DevExpress.XtraPivotGrid.PivotDataProcessingEngine.Optimized
             Me.pivotGridControl1.OptionsDataField.ColumnValueLineCount = 2
             Me.pivotGridControl1.Size = New System.Drawing.Size(596, 292)
             Me.pivotGridControl1.TabIndex = 0
-            AddHandler Me.pivotGridControl1.CustomExportHeader, New System.EventHandler(Of DevExpress.XtraPivotGrid.CustomExportHeaderEventArgs)(AddressOf Me.pivotGridControl1_CustomExportHeader)
+             ''' Cannot convert AssignmentExpressionSyntax, System.NullReferenceException: Object reference not set to an instance of an object.
+'''    at ICSharpCode.CodeConverter.VB.NodesVisitor.VisitAssignmentExpression(AssignmentExpressionSyntax node)
+'''    at Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor`1.Visit(SyntaxNode node)
+'''    at ICSharpCode.CodeConverter.VB.CommentConvertingVisitorWrapper`1.Accept(SyntaxNode csNode, Boolean addSourceMapping)
+''' 
+''' Input:
+'''             this.pivotGridControl1.CustomExportHeader += new System.EventHandler<DevExpress.XtraPivotGrid.CustomExportHeaderEventArgs>(this.pivotGridControl1_CustomExportHeader)
+'''  ' 
+            ' fieldName
             ' 
-            ' fieldName1
+Me.fieldName.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
+            Me.fieldName.AreaIndex = 0
+            Me.fieldName.Caption = "Name"
+            Me.fieldName.FieldName = "Name"
+            Me.fieldName.ImageIndex = 0
+            Me.fieldName.Name = "fieldName"
             ' 
-            Me.fieldName1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
-            Me.fieldName1.AreaIndex = 0
-            Me.fieldName1.Caption = "Name"
-            dataSourceColumnBinding1.ColumnName = "Name"
-            Me.fieldName1.DataBinding = dataSourceColumnBinding1
-            Me.fieldName1.ImageOptions.ImageIndex = 0
-            Me.fieldName1.Name = "fieldName1"
+            ' fieldDate
             ' 
-            ' fieldDate2
-            ' 
-            Me.fieldDate2.AreaIndex = 0
-            Me.fieldDate2.Caption = "Year"
-            dataSourceColumnBinding2.ColumnName = "Date"
-            dataSourceColumnBinding2.GroupInterval = DevExpress.XtraPivotGrid.PivotGroupInterval.DateYear
-            Me.fieldDate2.DataBinding = dataSourceColumnBinding2
-            Me.fieldDate2.ImageOptions.ImageIndex = 0
-            Me.fieldDate2.Name = "fieldDate2"
-            Me.fieldDate2.Width = 40
-            ' 
-            ' fieldValue3
-            ' 
-            Me.fieldValue3.Appearance.Value.Options.UseTextOptions = True
-            Me.fieldValue3.Appearance.Value.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
-            Me.fieldValue3.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
-            Me.fieldValue3.AreaIndex = 0
-            Me.fieldValue3.Caption = "Sum"
-            Me.fieldValue3.ColumnValueLineCount = 2
-            dataSourceColumnBinding3.ColumnName = "Value"
-            Me.fieldValue3.DataBinding = dataSourceColumnBinding3
-            Me.fieldValue3.ImageOptions.ImageIndex = 0
-            Me.fieldValue3.Name = "fieldValue3"
+            Me.fieldDate.AreaIndex = 0
+            Me.fieldDate.Caption = "Year"
+            Me.fieldDate.FieldName = "Date"
+            Me.fieldDate.GroupInterval = DevExpress.XtraPivotGrid.PivotGroupInterval.DateYear
+            Me.fieldDate.ImageIndex = 0
+            Me.fieldDate.Name = "fieldDate"
+            Me.fieldDate.UnboundFieldName = "fieldDate"
+            Me.fieldDate.Width = 40
             ' 
             ' fieldValue
             ' 
+            Me.fieldValue.Appearance.Value.Options.UseTextOptions = True
+            Me.fieldValue.Appearance.Value.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
             Me.fieldValue.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
-            Me.fieldValue.AreaIndex = 1
-            Me.fieldValue.Caption = "Count"
+            Me.fieldValue.AreaIndex = 0
+            Me.fieldValue.Caption = "Sum"
             Me.fieldValue.ColumnValueLineCount = 2
-            dataSourceColumnBinding4.ColumnName = "Value"
-            Me.fieldValue.DataBinding = dataSourceColumnBinding4
+            Me.fieldValue.FieldName = "Value"
+            Me.fieldValue.ImageIndex = 0
             Me.fieldValue.Name = "fieldValue"
-            Me.fieldValue.Visible = False
             ' 
             ' fieldValue1
             ' 
             Me.fieldValue1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
-            Me.fieldValue1.AreaIndex = 2
-            Me.fieldValue1.Caption = "Average"
+            Me.fieldValue1.AreaIndex = 1
+            Me.fieldValue1.Caption = "Count"
             Me.fieldValue1.ColumnValueLineCount = 2
-            dataSourceColumnBinding5.ColumnName = "Value"
-            Me.fieldValue1.DataBinding = dataSourceColumnBinding5
+            Me.fieldValue1.FieldName = "Value"
             Me.fieldValue1.Name = "fieldValue1"
+            Me.fieldValue1.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Count
             Me.fieldValue1.Visible = False
             ' 
-            ' fieldDate
+            ' fieldValue2
             ' 
-            Me.fieldDate.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea
-            Me.fieldDate.AreaIndex = 0
-            Me.fieldDate.Caption = "Date"
-            dataSourceColumnBinding6.ColumnName = "Date"
-            dataSourceColumnBinding6.GroupInterval = DevExpress.XtraPivotGrid.PivotGroupInterval.[Date]
-            Me.fieldDate.DataBinding = dataSourceColumnBinding6
-            Me.fieldDate.ImageOptions.ImageIndex = 0
-            Me.fieldDate.Name = "fieldDate"
+            Me.fieldValue2.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
+            Me.fieldValue2.AreaIndex = 2
+            Me.fieldValue2.Caption = "Average"
+            Me.fieldValue2.ColumnValueLineCount = 2
+            Me.fieldValue2.FieldName = "Value"
+            Me.fieldValue2.Name = "fieldValue2"
+            Me.fieldValue2.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Average
+            Me.fieldValue2.Visible = False
+            ' 
+            ' fieldDate1
+            ' 
+            Me.fieldDate1.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea
+            Me.fieldDate1.AreaIndex = 0
+            Me.fieldDate1.Caption = "Date"
+            Me.fieldDate1.FieldName = "Date"
+            Me.fieldDate1.GroupInterval = DevExpress.XtraPivotGrid.PivotGroupInterval.[Date]
+            Me.fieldDate1.ImageIndex = 0
+            Me.fieldDate1.Name = "fieldDate1"
+            Me.fieldDate1.UnboundFieldName = "fieldDate1"
             ' 
             ' Form1
             ' 
@@ -202,7 +205,7 @@ Namespace WindowsApplication53
             Me.ResumeLayout(False)
         End Sub
 
-#End Region
+'#End Region
         Private pivotGridControl1 As WindowsApplication53.MyPivotGridControl
 
         Private dataSet1 As System.Data.DataSet
@@ -215,17 +218,17 @@ Namespace WindowsApplication53
 
         Private dataColumn3 As System.Data.DataColumn
 
-        Private fieldName1 As DevExpress.XtraPivotGrid.PivotGridField
+        Private fieldName As DevExpress.XtraPivotGrid.PivotGridField
 
-        Private fieldDate2 As DevExpress.XtraPivotGrid.PivotGridField
-
-        Private fieldValue3 As DevExpress.XtraPivotGrid.PivotGridField
+        Private fieldDate As DevExpress.XtraPivotGrid.PivotGridField
 
         Private fieldValue As DevExpress.XtraPivotGrid.PivotGridField
 
         Private fieldValue1 As DevExpress.XtraPivotGrid.PivotGridField
 
-        Private fieldDate As DevExpress.XtraPivotGrid.PivotGridField
+        Private fieldValue2 As DevExpress.XtraPivotGrid.PivotGridField
+
+        Private fieldDate1 As DevExpress.XtraPivotGrid.PivotGridField
 
         Private panel1 As System.Windows.Forms.Panel
 

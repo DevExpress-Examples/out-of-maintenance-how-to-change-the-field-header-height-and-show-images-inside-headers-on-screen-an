@@ -3,6 +3,7 @@ Imports System.ComponentModel
 Imports System.Data
 Imports System.Drawing
 Imports System.Windows.Forms
+Imports DevExpress.XtraPrinting
 Imports DevExpress.XtraPivotGrid
 
 Namespace WindowsApplication53
@@ -48,7 +49,7 @@ Namespace WindowsApplication53
             Next
         End Sub
 
-        Private Sub pivotGridControl1_CustomExportHeader(ByVal sender As Object, ByVal e As CustomExportHeaderEventArgs)
+        Private Sub pivotGridControl1_CustomExportHeader(ByVal sender As Object, ByVal e As DevExpress.XtraPivotGrid.CustomExportHeaderEventArgs)
         End Sub
     End Class
 End Namespace
