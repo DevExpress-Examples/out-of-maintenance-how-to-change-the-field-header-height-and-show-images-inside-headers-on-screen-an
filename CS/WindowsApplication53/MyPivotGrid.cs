@@ -126,9 +126,8 @@ namespace WindowsApplication53
             if (appearance.Options.UseTextOptions)
             {
                 brickStyle.TextAlignment = TextAlignmentConverter.ToTextAlignment(appearance.TextHorizontalAlignment, appearance.TextVerticalAlignment);
-                brickStyle.StringFormat = new BrickStringFormat(appearance.StringFormat);
+                brickStyle.StringFormat = new BrickStringFormat(brickStyle.StringFormat, brickStyle.StringFormat.FormatFlags, BrickStringFormatPrototypeKind.GenericTypographic);
             }
-            brickStyle.StringFormat.PrototypeKind = BrickStringFormatPrototypeKind.GenericTypographic;
             brick.Style = brickStyle;
         }
         void SetDefaultBrickStyle(IPivotPrintAppearance appearance, int left, int top, int right, int bottom)
