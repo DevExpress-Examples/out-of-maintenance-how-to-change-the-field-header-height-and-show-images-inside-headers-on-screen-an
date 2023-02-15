@@ -19,7 +19,7 @@ Namespace WindowsApplication53
             MyBase.Dispose(disposing)
         End Sub
 
-'#Region "Windows Form Designer generated code"
+#Region "Windows Form Designer generated code"
         ''' <summary>
         ''' Required method for Designer support - do not modify
         ''' the contents of this method with the code editor.
@@ -86,17 +86,11 @@ Namespace WindowsApplication53
             Me.simpleButton1.Size = New System.Drawing.Size(99, 38)
             Me.simpleButton1.TabIndex = 2
             Me.simpleButton1.Text = "Preview"
-             ''' Cannot convert AssignmentExpressionSyntax, System.NullReferenceException: Object reference not set to an instance of an object.
-'''    at ICSharpCode.CodeConverter.VB.NodesVisitor.VisitAssignmentExpression(AssignmentExpressionSyntax node)
-'''    at Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor`1.Visit(SyntaxNode node)
-'''    at ICSharpCode.CodeConverter.VB.CommentConvertingVisitorWrapper`1.Accept(SyntaxNode csNode, Boolean addSourceMapping)
-''' 
-''' Input:
-'''             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click)
-'''  ' 
+            AddHandler Me.simpleButton1.Click, New System.EventHandler(AddressOf Me.simpleButton1_Click)
+            ' 
             ' imageList1
             ' 
-Me.imageList1.ImageStream = CType((resources.GetObject("imageList1.ImageStream")), System.Windows.Forms.ImageListStreamer)
+            Me.imageList1.ImageStream = CType((resources.GetObject("imageList1.ImageStream")), System.Windows.Forms.ImageListStreamer)
             Me.imageList1.TransparentColor = System.Drawing.Color.White
             Me.imageList1.Images.SetKeyName(0, "smile.jpg")
             ' 
@@ -115,17 +109,11 @@ Me.imageList1.ImageStream = CType((resources.GetObject("imageList1.ImageStream")
             Me.pivotGridControl1.OptionsDataField.ColumnValueLineCount = 2
             Me.pivotGridControl1.Size = New System.Drawing.Size(596, 292)
             Me.pivotGridControl1.TabIndex = 0
-             ''' Cannot convert AssignmentExpressionSyntax, System.NullReferenceException: Object reference not set to an instance of an object.
-'''    at ICSharpCode.CodeConverter.VB.NodesVisitor.VisitAssignmentExpression(AssignmentExpressionSyntax node)
-'''    at Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor`1.Visit(SyntaxNode node)
-'''    at ICSharpCode.CodeConverter.VB.CommentConvertingVisitorWrapper`1.Accept(SyntaxNode csNode, Boolean addSourceMapping)
-''' 
-''' Input:
-'''             this.pivotGridControl1.CustomExportHeader += new System.EventHandler<DevExpress.XtraPivotGrid.CustomExportHeaderEventArgs>(this.pivotGridControl1_CustomExportHeader)
-'''  ' 
+            AddHandler Me.pivotGridControl1.CustomExportHeader, New System.EventHandler(Of DevExpress.XtraPivotGrid.CustomExportHeaderEventArgs)(AddressOf Me.pivotGridControl1_CustomExportHeader)
+            ' 
             ' fieldName
             ' 
-Me.fieldName.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
+            Me.fieldName.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
             Me.fieldName.AreaIndex = 0
             Me.fieldName.Caption = "Name"
             Me.fieldName.FieldName = "Name"
@@ -205,7 +193,7 @@ Me.fieldName.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
             Me.ResumeLayout(False)
         End Sub
 
-'#End Region
+#End Region
         Private pivotGridControl1 As WindowsApplication53.MyPivotGridControl
 
         Private dataSet1 As System.Data.DataSet
