@@ -54,13 +54,13 @@ namespace WindowsApplication53
         public MyPivotGridPrinter(PivotGridControl pivotGridControl) : base(pivotGridControl) { }
 
 
-        protected override IVisualBrick DrawHeaderBrick(PivotFieldItemBase field, Rectangle bounds)
+        protected override VisualBrick DrawHeaderBrick(PivotFieldItemBase field, Rectangle bounds)
         {
             IPivotPrintAppearance appearance = GetFieldAppearance(field);
             SetDefaultBrickStyle(appearance, CellSizeProvider.FieldValueTextOffset, 0, 0, 0);
 
             string text = field.Caption;
-            IVisualBrick brick = CreateTextBrick();
+            VisualBrick brick = CreateTextBrick();
             brick.Text = text.Substring(MyPivotGridControl.ImagePlaceHolder.Length);
             if (text != null)
                 brick.TextValue = text;

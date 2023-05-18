@@ -70,11 +70,11 @@ Namespace WindowsApplication53
             MyBase.New(pivotGridControl)
         End Sub
 
-        Protected Overrides Function DrawHeaderBrick(ByVal field As PivotFieldItemBase, ByVal bounds As Rectangle) As IVisualBrick
+        Protected Overrides Function DrawHeaderBrick(ByVal field As PivotFieldItemBase, ByVal bounds As Rectangle) As VisualBrick
             Dim appearance As IPivotPrintAppearance = GetFieldAppearance(field)
             SetDefaultBrickStyle(appearance, CellSizeProvider.FieldValueTextOffset, 0, 0, 0)
             Dim text As String = field.Caption
-            Dim brick As IVisualBrick = CreateTextBrick()
+            Dim brick As VisualBrick = CreateTextBrick()
             brick.Text = text.Substring(MyPivotGridControl.ImagePlaceHolder.Length)
             If Not Equals(text, Nothing) Then brick.TextValue = text
             brick.TextValueFormatString = ""
